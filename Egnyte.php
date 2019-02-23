@@ -16,11 +16,9 @@ class Egnyte
         }
 
         if (!empty($params['json'])) {
-            $json = json_encode($params['json']);
             $params['header'][] = 'Content-Type: application/json';
-            $params['header'][] = 'Content-Length: ' . strlen($json);
             $defaults[CURLOPT_CUSTOMREQUEST] = 'POST';
-            $defaults[CURLOPT_POSTFIELDS] = $json;
+            $defaults[CURLOPT_POSTFIELDS] = json_encode($params['json']);
         }
 
         if (isset($this->token)) {
@@ -61,9 +59,9 @@ class Egnyte
 
     public function createFolder($path)
     {
-        $url = '/pubapi/v1/fs{$path}';
+        $url = "/pubapi/v1/fs{$path}";
         $params['json'] = ['action' => 'add_folder'];
-        $this->curl($url, $params);
+        return $this->curl($url, $params);
     }
 
     public function createMultipleFolders(array $folders)
