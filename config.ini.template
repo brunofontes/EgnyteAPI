@@ -1,0 +1,12 @@
+;<?php
+;die(); // For safety reasons
+;/*
+
+[egnyte_credentials]
+id='id'
+username='username'
+password='pass'
+token='token'
+
+;*/
+;?>
