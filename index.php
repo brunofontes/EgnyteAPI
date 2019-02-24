@@ -6,4 +6,5 @@ $egnyte->setToken($config['egnyte_credentials']['token']);
 // $token = $egnyte->getToken($config['egnyte_credentials']['id'], $config['egnyte_credentials']['username'], $config['egnyte_credentials']['password']);
 // print_r($egnyte->getUserInfo());
 // print_r($egnyte->getUserPermission('bfontes', '/Shared/RIO/Projects'));
-print_r($egnyte->createFolder('/Private/bfontes/ttt'));
+// print_r($egnyte->createFolder('/Private/bfontes/ttt'));
+// print_r($egnyte->createMultipleFolders(['/Private/bfontes/ttt/abc', '/Private/bfontes/ttt', '/Private/bfontes/aaa', '/Private/bfontes', '/Private/bfontes/']));

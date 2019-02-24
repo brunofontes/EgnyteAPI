@@ -66,8 +66,42 @@ class Egnyte
 
     public function createMultipleFolders(array $folders)
     {
+        $folders = $this->cleanupFolderCreationList($folders);
+        $log = $this->createFolders($folders);
+    }
+
+    /**
+     * Removes parent folders when subfolders are present as
+     * they does not need to be manually created.
+     *
+     * @param array $folders List of folders to be created
+     * @return array List of folders with no parent folders if subfolder is present on list
+     */
+    private function cleanupFolderCreationList(array $folders): array
+    {
+        $folders = array_unique($folders);
+        rsort($folders, SORT_STRING);
+
         $newFolders = array_reduce($folders, function ($carry, $item) {
+            if (empty($carry)) {
+                $carry[] = $item;
+            } elseif (strpos(end($carry), $item) === false) {
+                $carry[] = $item;
+            }
+            return $carry;
         });
+        return $newFolders;
+    }
+
+    protected function createFolders(array $folders)
+    {
+        $result = [];
+        array_map(
+            function ($dir) {
+                $result[$dir] = $this->createFolder($dir);
+            },
+            $folders
+        );
     }
 
     public function getUserPermission($user, $folder)
@@ -75,6 +109,5 @@ class Egnyte
         $url = "/pubapi/v1/perms/user/{$user}";
         $params['get'] = ['folder' => $folder];
         return $this->curl($url, $params);
-        // return $this->curl($url);
     }
 }
