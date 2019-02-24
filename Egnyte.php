@@ -93,7 +93,7 @@ class Egnyte
         return $newFolders;
     }
 
-    protected function createFolders(array $folders)
+    protected function createFolders(array $folders): array
     {
         $result = [];
         array_map(
@@ -102,6 +102,7 @@ class Egnyte
             },
             $folders
         );
+        return $result;
     }
 
     public function getUserPermission($user, $folder)
