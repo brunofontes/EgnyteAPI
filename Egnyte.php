@@ -21,12 +21,23 @@ class Egnyte
             $defaults[CURLOPT_POSTFIELDS] = json_encode($params['json']);
         }
 
+        if (!empty($params['postUrl'])) {
+            $params['header'][] = 'x-www-form-urlencoded';
+            $defaults[CURLOPT_CUSTOMREQUEST] = 'POST';
+            $defaults[CURLOPT_POSTFIELDS] = http_build_query($params['postUrl']);
+        }
+
         if (isset($this->token)) {
             $params['header'][] = "Authorization: Bearer {$this->token}";
         }
 
         if (!empty($params['header'])) {
             $defaults[CURLOPT_HTTPHEADER] = $params['header'];
+        }
+
+        if (!empty($params['plain'])) {
+            $params['header'][] = 'Content-Type: text/plain';
+            $defaults[CURLOPT_POSTFIELDS] = $params['plain'];
         }
 
         $ch = curl_init();
@@ -36,11 +47,12 @@ class Egnyte
         return json_decode($jsonResult, true);
     }
 
-    public function getToken($id, $user, $pass)
+    public function getToken($id, $secret, $user, $pass)
     {
         if (!$this->token) {
             $url = '/puboauth/token';
-            $params['get'] = ['client_id' => $id, 'username' => $user, 'password' => $pass, 'grant_type' => 'password'];
+            $params['postUrl'] = ['client_id' => $id, 'client_secret' => $secret, 'username' => $user, 'password' => $pass, 'grant_type' => 'password', 'scope' => 'Egnyte.filesystem Egnyte.user'];
+            $ttt = $this->curl($url, $params);
             $this->token = $this->curl($url, $params)['access_token'];
         }
         return $this->token;
@@ -61,6 +73,18 @@ class Egnyte
     {
         $url = "/pubapi/v1/fs{$path}";
         $params['json'] = ['action' => 'add_folder'];
+        return $this->curl($url, $params);
+    }
+
+    public function uploadFile($source, $target)
+    {
+        $sha512 = hash('sha512', $source, false);
+        $file = new CURLFile($source, mime_content_type($source));
+        $filecontents = file_get_contents($source);
+        $url = "/pubapi/v1/fs-content/{$target}";
+        $params['header']['X-Sha512-Checksum'] = $sha512;
+        $params['json'] = ["file" => $file];
+        $params['plain'] = $filecontents;
         return $this->curl($url, $params);
     }
 
