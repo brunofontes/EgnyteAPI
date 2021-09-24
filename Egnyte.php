@@ -71,6 +71,7 @@ class Egnyte
 
     public function createFolder($path)
     {
+        $path = $this->fixUrl($path);
         $url = "/pubapi/v1/fs{$path}";
         $params['json'] = ['action' => 'add_folder'];
         return $this->curl($url, $params);
@@ -78,6 +79,7 @@ class Egnyte
 
     public function uploadFile($source, $target)
     {
+        $target = $this->fixUrl($target);
         $sha512 = hash('sha512', $source, false);
         $file = new CURLFile($source, mime_content_type($source));
         $filecontents = file_get_contents($source);
@@ -86,6 +88,11 @@ class Egnyte
         $params['json'] = ["file" => $file];
         $params['plain'] = $filecontents;
         return $this->curl($url, $params);
+    }
+
+    private function fixUrl(string $urlPath) {
+        $urlPath = urlencode($urlPath);
+        return str_replace("+", "%20", $urlPath);
     }
 
     public function createMultipleFolders(array $folders)
