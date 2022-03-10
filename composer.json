@@ -1,0 +1,24 @@
+{
+    "name": "brunofontes/egnyte-api",
+    "description": "A personal Egnyte api to better understand how it works",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Bruno F. Fontes",
+            "email": "developer@brunofontes.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "BrunoFontes\\": "./",
+            "BrunoFontes\\Egnyte\\": "./"
+        }
+	},
+   "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/brunofontes/EgnyteAPI"
+		}
+   ]
+}
