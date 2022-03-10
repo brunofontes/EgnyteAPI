@@ -1,4 +1,6 @@
 <?php
+namespace brunofontes;
+
 class Egnyte
 {
     protected $token;

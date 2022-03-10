@@ -11,11 +11,10 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "BrunoFontes\\": "./",
-            "BrunoFontes\\Egnyte\\": "./"
+            "brunofontes\\": "."
         }
-	},
-   "repositories": [
+    },
+    "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/brunofontes/EgnyteAPI"

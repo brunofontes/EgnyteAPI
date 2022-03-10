@@ -1,0 +1,34 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/run/media/bruno/Multimedia/MyDocuments/Development/Ccaps/Egnyte/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+Egnyte	Egnyte.php	/^class Egnyte$/;"	c
+EgnyteAPI	README.md	/^# EgnyteAPI$/;"	c
+cleanupFolderCreationList	Egnyte.php	/^    private function cleanupFolderCreationList(array $folders): array$/;"	f	class:Egnyte	typeref:unknown:array
+config	index.php	/^$config = parse_ini_file('config.ini', true);$/;"	v
+createFolder	Egnyte.php	/^    public function createFolder($path)$/;"	f	class:Egnyte
+createFolders	Egnyte.php	/^    protected function createFolders(array $folders): array$/;"	f	class:Egnyte	typeref:unknown:array
+createMultipleFolders	Egnyte.php	/^    public function createMultipleFolders(array $folders)$/;"	f	class:Egnyte
+curl	Egnyte.php	/^    protected function curl(string $partUrl, $params = ['header' => null, 'json' => null, 'get' /;"	f	class:Egnyte
+egnyte	index.php	/^$egnyte = new Egnyte();$/;"	v
+egnyte_credentials	config.ini	/^[egnyte_credentials]$/;"	s
+fixUrl	Egnyte.php	/^    private function fixUrl(string $urlPath) {$/;"	f	class:Egnyte
+getToken	Egnyte.php	/^    public function getToken($id, $secret, $user, $pass)$/;"	f	class:Egnyte
+getUserInfo	Egnyte.php	/^    public function getUserInfo()$/;"	f	class:Egnyte
+getUserPermission	Egnyte.php	/^    public function getUserPermission($user, $folder)$/;"	f	class:Egnyte
+id	config.ini	/^id='6k3d82h9wp9nbdtr96rajx5m'$/;"	k	section:egnyte_credentials
+idold	config.ini	/^idold='b8r5qpma848v3k76726h2aaj'$/;"	k	section:egnyte_credentials
+password	config.ini	/^password='g3&CtQsG81FV8q5=.4'$/;"	k	section:egnyte_credentials
+secret	config.ini	/^secret='NGwQys6uRv8mChvqmBmjswzmyH2csRtKt8pGtDCxjmFkC66rAH'$/;"	k	section:egnyte_credentials
+setToken	Egnyte.php	/^    public function setToken($token)$/;"	f	class:Egnyte
+token	Egnyte.php	/^    protected $token;$/;"	v	class:Egnyte
+token	config.ini	/^token='wgfh6nyhhdu459trqzfcstdc'$/;"	k	section:egnyte_credentials
+uploadFile	Egnyte.php	/^    public function uploadFile($source, $target)$/;"	f	class:Egnyte
+username	config.ini	/^username='bfontes@oxoinnovation.com'$/;"	k	section:egnyte_credentials
