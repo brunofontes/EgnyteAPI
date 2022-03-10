@@ -44,7 +44,7 @@ class Egnyte
         curl_setopt_array($ch, ($defaults));
         $jsonResult = curl_exec($ch);
         curl_close($ch);
-        return json_decode($jsonResult, true);
+        return json_decode($jsonResult, true) ?? $jsonResult;
     }
 
     public function getToken($id, $secret, $user, $pass)
@@ -92,6 +92,7 @@ class Egnyte
 
     private function fixUrl(string $urlPath) {
         $urlPath = urlencode($urlPath);
+        $urlPath = str_replace("%2F", "/", $urlPath);
         return str_replace("+", "%20", $urlPath);
     }
 
