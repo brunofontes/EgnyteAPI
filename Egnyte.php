@@ -83,7 +83,7 @@ class Egnyte
     {
         $target = $this->fixUrl($target);
         $sha512 = hash('sha512', $source, false);
-        $file = new CURLFile($source, mime_content_type($source));
+        $file = new \CURLFile($source, mime_content_type($source));
         $filecontents = file_get_contents($source);
         $url = "/pubapi/v1/fs-content/{$target}";
         $params['header']['X-Sha512-Checksum'] = $sha512;
@@ -92,7 +92,27 @@ class Egnyte
         return $this->curl($url, $params);
     }
 
-    private function fixUrl(string $urlPath) {
+    /**
+     * Move a file or folder to a different location.
+     * @param string $source Full path to file/folder
+     * @param string $target Full absolute destination 
+     *        path of file or folder
+     */
+    public function move(string $source, string $target)
+    {
+        $source = $this->fixUrl($source);
+        $url = "/pubapi/v1/fs/{$source}";
+        $params['json'] = [
+            'action' => "move",
+            'destination' => $target
+        ];
+        return $this->curl($url, $params);
+    }
+
+    /**
+     * URL encode the path and fix the wrong slashes and spaces
+     */
+    private function fixUrl(string $urlPath) :string {
         $urlPath = urlencode($urlPath);
         $urlPath = str_replace("%2F", "/", $urlPath);
         return str_replace("+", "%20", $urlPath);
