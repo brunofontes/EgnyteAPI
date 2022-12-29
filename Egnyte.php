@@ -71,10 +71,11 @@ class Egnyte
         return $this->curl($url);
     }
 
-    public function createFolder($path)
+    public function createFolder($path): string
     {
         $path = $this->fixUrl($path);
-        $url = "/pubapi/v1/fs{$path}";
+        $path = ltrim($path, "/");
+        $url = "/pubapi/v1/fs/{$path}";
         $params['json'] = ['action' => 'add_folder'];
         return $this->curl($url, $params);
     }
