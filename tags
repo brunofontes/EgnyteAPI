@@ -8,27 +8,122 @@
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
-Egnyte	Egnyte.php	/^class Egnyte$/;"	c
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+0	composer.json	/^        {$/;"	o	array:authors
+0	composer.json	/^        {$/;"	o	array:repositories
+ClassLoader	vendor/composer/ClassLoader.php	/^class ClassLoader$/;"	c	namespace:Composer\\Autoload
+ClassLoader	vendor/composer/InstalledVersions.php	/^use Composer\\Autoload\\ClassLoader;$/;"	a	namespace:Composer	typeref:unknown:Composer\\Autoload\\ClassLoader
+Composer	vendor/composer/InstalledVersions.php	/^namespace Composer;$/;"	n
+ComposerAutoloaderInit0143e8a0c92bacd412dfbb1db69be1fc	vendor/composer/autoload_real.php	/^class ComposerAutoloaderInit0143e8a0c92bacd412dfbb1db69be1fc$/;"	c
+ComposerStaticInit0143e8a0c92bacd412dfbb1db69be1fc	vendor/composer/autoload_static.php	/^class ComposerStaticInit0143e8a0c92bacd412dfbb1db69be1fc$/;"	c	namespace:Composer\\Autoload
+Composer\\Autoload	vendor/composer/ClassLoader.php	/^namespace Composer\\Autoload;$/;"	n
+Composer\\Autoload	vendor/composer/autoload_static.php	/^namespace Composer\\Autoload;$/;"	n
+Egnyte	Egnyte.php	/^class Egnyte$/;"	c	namespace:brunofontes
 EgnyteAPI	README.md	/^# EgnyteAPI$/;"	c
-cleanupFolderCreationList	Egnyte.php	/^    private function cleanupFolderCreationList(array $folders): array$/;"	f	class:Egnyte	typeref:unknown:array
+InstalledVersions	vendor/composer/InstalledVersions.php	/^class InstalledVersions$/;"	c	namespace:Composer
+VersionParser	vendor/composer/InstalledVersions.php	/^use Composer\\Semver\\VersionParser;$/;"	a	namespace:Composer	typeref:unknown:Composer\\Semver\\VersionParser
+__construct	vendor/composer/ClassLoader.php	/^    public function __construct($vendorDir = null)$/;"	f	class:Composer\\Autoload\\ClassLoader
+add	vendor/composer/ClassLoader.php	/^    public function add($prefix, $paths, $prepend = false)$/;"	f	class:Composer\\Autoload\\ClassLoader
+addClassMap	vendor/composer/ClassLoader.php	/^    public function addClassMap(array $classMap)$/;"	f	class:Composer\\Autoload\\ClassLoader
+addPsr4	vendor/composer/ClassLoader.php	/^    public function addPsr4($prefix, $paths, $prepend = false)$/;"	f	class:Composer\\Autoload\\ClassLoader
+apcuPrefix	vendor/composer/ClassLoader.php	/^    private $apcuPrefix;$/;"	v	class:Composer\\Autoload\\ClassLoader	typeref:unknown:array
+authors	composer.json	/^    "authors": [$/;"	a
+autoload	composer.json	/^    "autoload": {$/;"	o
+baseDir	vendor/composer/autoload_classmap.php	/^$baseDir = dirname($vendorDir);$/;"	v
+baseDir	vendor/composer/autoload_namespaces.php	/^$baseDir = dirname($vendorDir);$/;"	v
+baseDir	vendor/composer/autoload_psr4.php	/^$baseDir = dirname($vendorDir);$/;"	v
+brunofontes	Egnyte.php	/^namespace brunofontes;$/;"	n
+brunofontes\\\\	composer.json	/^            "brunofontes\\\\": "."$/;"	s	object:autoload.psr-4
+canGetVendors	vendor/composer/InstalledVersions.php	/^    private static $canGetVendors;$/;"	v	class:Composer\\InstalledVersions
+classMap	vendor/composer/ClassLoader.php	/^    private $classMap = array();$/;"	v	class:Composer\\Autoload\\ClassLoader
+classMap	vendor/composer/autoload_static.php	/^    public static $classMap = array ($/;"	v	class:Composer\\Autoload\\ComposerStaticInit0143e8a0c92bacd412dfbb1db69be1fc
+classMapAuthoritative	vendor/composer/ClassLoader.php	/^    private $classMapAuthoritative = false;$/;"	v	class:Composer\\Autoload\\ClassLoader
+cleanupFolderCreationList	Egnyte.php	/^    private function cleanupFolderCreationList(array $folders): array$/;"	f	class:brunofontes\\Egnyte	typeref:unknown:array
 config	index.php	/^$config = parse_ini_file('config.ini', true);$/;"	v
-createFolder	Egnyte.php	/^    public function createFolder($path)$/;"	f	class:Egnyte
-createFolders	Egnyte.php	/^    protected function createFolders(array $folders): array$/;"	f	class:Egnyte	typeref:unknown:array
-createMultipleFolders	Egnyte.php	/^    public function createMultipleFolders(array $folders)$/;"	f	class:Egnyte
-curl	Egnyte.php	/^    protected function curl(string $partUrl, $params = ['header' => null, 'json' => null, 'get' /;"	f	class:Egnyte
-egnyte	index.php	/^$egnyte = new Egnyte();$/;"	v
+createFolder	Egnyte.php	/^    public function createFolder($path): array$/;"	f	class:brunofontes\\Egnyte	typeref:unknown:array
+createFolders	Egnyte.php	/^    protected function createFolders(array $folders): array$/;"	f	class:brunofontes\\Egnyte	typeref:unknown:array
+createMultipleFolders	Egnyte.php	/^    public function createMultipleFolders(array $folders)$/;"	f	class:brunofontes\\Egnyte
+curl	Egnyte.php	/^    protected function curl(string $partUrl, $params = ['header' => null, 'json' => null, 'get' /;"	f	class:brunofontes\\Egnyte
+description	composer.json	/^    "description": "A personal Egnyte api to better understand how it works",$/;"	s
+dev	vendor/composer/installed.json	/^    "dev": true,$/;"	b
+dev-package-names	vendor/composer/installed.json	/^    "dev-package-names": []$/;"	a
+egnyte	index.php	/^$egnyte = new brunofontes\\Egnyte();$/;"	v
 egnyte_credentials	config.ini	/^[egnyte_credentials]$/;"	s
-fixUrl	Egnyte.php	/^    private function fixUrl(string $urlPath) {$/;"	f	class:Egnyte
-getToken	Egnyte.php	/^    public function getToken($id, $secret, $user, $pass)$/;"	f	class:Egnyte
-getUserInfo	Egnyte.php	/^    public function getUserInfo()$/;"	f	class:Egnyte
-getUserPermission	Egnyte.php	/^    public function getUserPermission($user, $folder)$/;"	f	class:Egnyte
+email	composer.json	/^            "email": "developer@brunofontes.net"$/;"	s	object:authors.0
+fallbackDirsPsr0	vendor/composer/ClassLoader.php	/^    private $fallbackDirsPsr0 = array();$/;"	v	class:Composer\\Autoload\\ClassLoader
+fallbackDirsPsr4	vendor/composer/ClassLoader.php	/^    private $fallbackDirsPsr4 = array();$/;"	v	class:Composer\\Autoload\\ClassLoader
+findFile	vendor/composer/ClassLoader.php	/^    public function findFile($class)$/;"	f	class:Composer\\Autoload\\ClassLoader
+findFileWithExtension	vendor/composer/ClassLoader.php	/^    private function findFileWithExtension($class, $ext)$/;"	f	class:Composer\\Autoload\\ClassLoader
+fixUrl	Egnyte.php	/^    private function fixUrl(string $urlPath) :string {$/;"	f	class:brunofontes\\Egnyte	typeref:unknown:string
+getAllRawData	vendor/composer/InstalledVersions.php	/^    public static function getAllRawData()$/;"	f	class:Composer\\InstalledVersions
+getApcuPrefix	vendor/composer/ClassLoader.php	/^    public function getApcuPrefix()$/;"	f	class:Composer\\Autoload\\ClassLoader
+getClassMap	vendor/composer/ClassLoader.php	/^    public function getClassMap()$/;"	f	class:Composer\\Autoload\\ClassLoader
+getFallbackDirs	vendor/composer/ClassLoader.php	/^    public function getFallbackDirs()$/;"	f	class:Composer\\Autoload\\ClassLoader
+getFallbackDirsPsr4	vendor/composer/ClassLoader.php	/^    public function getFallbackDirsPsr4()$/;"	f	class:Composer\\Autoload\\ClassLoader
+getInitializer	vendor/composer/autoload_static.php	/^    public static function getInitializer(ClassLoader $loader)$/;"	f	class:Composer\\Autoload\\ComposerStaticInit0143e8a0c92bacd412dfbb1db69be1fc
+getInstallPath	vendor/composer/InstalledVersions.php	/^    public static function getInstallPath($packageName)$/;"	f	class:Composer\\InstalledVersions
+getInstalled	vendor/composer/InstalledVersions.php	/^    private static function getInstalled()$/;"	f	class:Composer\\InstalledVersions
+getInstalledPackages	vendor/composer/InstalledVersions.php	/^    public static function getInstalledPackages()$/;"	f	class:Composer\\InstalledVersions
+getInstalledPackagesByType	vendor/composer/InstalledVersions.php	/^    public static function getInstalledPackagesByType($type)$/;"	f	class:Composer\\InstalledVersions
+getLoader	vendor/composer/autoload_real.php	/^    public static function getLoader()$/;"	f	class:ComposerAutoloaderInit0143e8a0c92bacd412dfbb1db69be1fc
+getPrefixes	vendor/composer/ClassLoader.php	/^    public function getPrefixes()$/;"	f	class:Composer\\Autoload\\ClassLoader
+getPrefixesPsr4	vendor/composer/ClassLoader.php	/^    public function getPrefixesPsr4()$/;"	f	class:Composer\\Autoload\\ClassLoader
+getPrettyVersion	vendor/composer/InstalledVersions.php	/^    public static function getPrettyVersion($packageName)$/;"	f	class:Composer\\InstalledVersions
+getRawData	vendor/composer/InstalledVersions.php	/^    public static function getRawData()$/;"	f	class:Composer\\InstalledVersions
+getReference	vendor/composer/InstalledVersions.php	/^    public static function getReference($packageName)$/;"	f	class:Composer\\InstalledVersions
+getRegisteredLoaders	vendor/composer/ClassLoader.php	/^    public static function getRegisteredLoaders()$/;"	f	class:Composer\\Autoload\\ClassLoader
+getRootPackage	vendor/composer/InstalledVersions.php	/^    public static function getRootPackage()$/;"	f	class:Composer\\InstalledVersions
+getToken	Egnyte.php	/^    public function getToken($id, $secret, $user, $pass)$/;"	f	class:brunofontes\\Egnyte
+getUseIncludePath	vendor/composer/ClassLoader.php	/^    public function getUseIncludePath()$/;"	f	class:Composer\\Autoload\\ClassLoader
+getUserInfo	Egnyte.php	/^    public function getUserInfo()$/;"	f	class:brunofontes\\Egnyte
+getUserPermission	Egnyte.php	/^    public function getUserPermission($user, $folder)$/;"	f	class:brunofontes\\Egnyte
+getVersion	vendor/composer/InstalledVersions.php	/^    public static function getVersion($packageName)$/;"	f	class:Composer\\InstalledVersions
+getVersionRanges	vendor/composer/InstalledVersions.php	/^    public static function getVersionRanges($packageName)$/;"	f	class:Composer\\InstalledVersions
 id	config.ini	/^id='6k3d82h9wp9nbdtr96rajx5m'$/;"	k	section:egnyte_credentials
 idold	config.ini	/^idold='b8r5qpma848v3k76726h2aaj'$/;"	k	section:egnyte_credentials
+includeFile	vendor/composer/ClassLoader.php	/^function includeFile($file)$/;"	f	namespace:Composer\\Autoload
+installed	vendor/composer/InstalledVersions.php	/^    private static $installed;$/;"	v	class:Composer\\InstalledVersions
+installedByVendor	vendor/composer/InstalledVersions.php	/^    private static $installedByVendor = array();$/;"	v	class:Composer\\InstalledVersions
+isClassMapAuthoritative	vendor/composer/ClassLoader.php	/^    public function isClassMapAuthoritative()$/;"	f	class:Composer\\Autoload\\ClassLoader
+isInstalled	vendor/composer/InstalledVersions.php	/^    public static function isInstalled($packageName, $includeDevRequirements = true)$/;"	f	class:Composer\\InstalledVersions
+license	composer.json	/^    "license": "GPL-3.0-or-later",$/;"	s
+loadClass	vendor/composer/ClassLoader.php	/^    public function loadClass($class)$/;"	f	class:Composer\\Autoload\\ClassLoader
+loadClassLoader	vendor/composer/autoload_real.php	/^    public static function loadClassLoader($class)$/;"	f	class:ComposerAutoloaderInit0143e8a0c92bacd412dfbb1db69be1fc
+loader	vendor/composer/autoload_real.php	/^    private static $loader;$/;"	v	class:ComposerAutoloaderInit0143e8a0c92bacd412dfbb1db69be1fc
+minimum-stability	composer.json	/^    "minimum-stability": "stable",$/;"	s
+missingClasses	vendor/composer/ClassLoader.php	/^    private $missingClasses = array();$/;"	v	class:Composer\\Autoload\\ClassLoader
+move	Egnyte.php	/^    public function move(string $source, string $target)$/;"	f	class:brunofontes\\Egnyte
+name	composer.json	/^            "name": "Bruno F. Fontes",$/;"	s	object:authors.0
+name	composer.json	/^    "name": "brunofontes\/egnyte-api",$/;"	s
+packages	vendor/composer/installed.json	/^    "packages": [],$/;"	a
 password	config.ini	/^password='g3&CtQsG81FV8q5=.4'$/;"	k	section:egnyte_credentials
+prefixDirsPsr4	vendor/composer/ClassLoader.php	/^    private $prefixDirsPsr4 = array();$/;"	v	class:Composer\\Autoload\\ClassLoader
+prefixDirsPsr4	vendor/composer/autoload_static.php	/^    public static $prefixDirsPsr4 = array ($/;"	v	class:Composer\\Autoload\\ComposerStaticInit0143e8a0c92bacd412dfbb1db69be1fc
+prefixLengthsPsr4	vendor/composer/ClassLoader.php	/^    private $prefixLengthsPsr4 = array();$/;"	v	class:Composer\\Autoload\\ClassLoader
+prefixLengthsPsr4	vendor/composer/autoload_static.php	/^    public static $prefixLengthsPsr4 = array ($/;"	v	class:Composer\\Autoload\\ComposerStaticInit0143e8a0c92bacd412dfbb1db69be1fc
+prefixesPsr0	vendor/composer/ClassLoader.php	/^    private $prefixesPsr0 = array();$/;"	v	class:Composer\\Autoload\\ClassLoader
+psr-4	composer.json	/^        "psr-4": {$/;"	o	object:autoload
+register	vendor/composer/ClassLoader.php	/^    public function register($prepend = false)$/;"	f	class:Composer\\Autoload\\ClassLoader
+registeredLoaders	vendor/composer/ClassLoader.php	/^    private static $registeredLoaders = array();$/;"	v	class:Composer\\Autoload\\ClassLoader
+reload	vendor/composer/InstalledVersions.php	/^    public static function reload($data)$/;"	f	class:Composer\\InstalledVersions
+repositories	composer.json	/^    "repositories": [$/;"	a
+satisfies	vendor/composer/InstalledVersions.php	/^    public static function satisfies(VersionParser $parser, $packageName, $constraint)$/;"	f	class:Composer\\InstalledVersions
 secret	config.ini	/^secret='NGwQys6uRv8mChvqmBmjswzmyH2csRtKt8pGtDCxjmFkC66rAH'$/;"	k	section:egnyte_credentials
-setToken	Egnyte.php	/^    public function setToken($token)$/;"	f	class:Egnyte
-token	Egnyte.php	/^    protected $token;$/;"	v	class:Egnyte
+set	vendor/composer/ClassLoader.php	/^    public function set($prefix, $paths)$/;"	f	class:Composer\\Autoload\\ClassLoader
+setApcuPrefix	vendor/composer/ClassLoader.php	/^    public function setApcuPrefix($apcuPrefix)$/;"	f	class:Composer\\Autoload\\ClassLoader
+setClassMapAuthoritative	vendor/composer/ClassLoader.php	/^    public function setClassMapAuthoritative($classMapAuthoritative)$/;"	f	class:Composer\\Autoload\\ClassLoader
+setPsr4	vendor/composer/ClassLoader.php	/^    public function setPsr4($prefix, $paths)$/;"	f	class:Composer\\Autoload\\ClassLoader
+setToken	Egnyte.php	/^    public function setToken($token)$/;"	f	class:brunofontes\\Egnyte
+setUseIncludePath	vendor/composer/ClassLoader.php	/^    public function setUseIncludePath($useIncludePath)$/;"	f	class:Composer\\Autoload\\ClassLoader
+token	Egnyte.php	/^    protected $token;$/;"	v	class:brunofontes\\Egnyte
 token	config.ini	/^token='wgfh6nyhhdu459trqzfcstdc'$/;"	k	section:egnyte_credentials
-uploadFile	Egnyte.php	/^    public function uploadFile($source, $target)$/;"	f	class:Egnyte
+type	composer.json	/^            "type": "vcs",$/;"	s	object:repositories.0
+unregister	vendor/composer/ClassLoader.php	/^    public function unregister()$/;"	f	class:Composer\\Autoload\\ClassLoader
+uploadFile	Egnyte.php	/^    public function uploadFile($source, $target)$/;"	f	class:brunofontes\\Egnyte
+url	composer.json	/^            "url": "https:\/\/github.com\/brunofontes\/EgnyteAPI"$/;"	s	object:repositories.0
+useIncludePath	vendor/composer/ClassLoader.php	/^    private $useIncludePath = false;$/;"	v	class:Composer\\Autoload\\ClassLoader
 username	config.ini	/^username='bfontes@oxoinnovation.com'$/;"	k	section:egnyte_credentials
+vendorDir	vendor/composer/ClassLoader.php	/^    private $vendorDir;$/;"	v	class:Composer\\Autoload\\ClassLoader
+vendorDir	vendor/composer/autoload_classmap.php	/^$vendorDir = dirname(dirname(__FILE__));$/;"	v
+vendorDir	vendor/composer/autoload_namespaces.php	/^$vendorDir = dirname(dirname(__FILE__));$/;"	v
+vendorDir	vendor/composer/autoload_psr4.php	/^$vendorDir = dirname(dirname(__FILE__));$/;"	v

@@ -71,7 +71,7 @@ class Egnyte
         return $this->curl($url);
     }
 
-    public function createFolder($path): string
+    public function createFolder($path): array
     {
         $path = $this->fixUrl($path);
         $path = ltrim($path, "/");
