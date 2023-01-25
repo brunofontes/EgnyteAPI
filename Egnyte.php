@@ -5,7 +5,7 @@ class Egnyte
 {
     protected $token;
 
-    protected float $sleep = 0.0;
+    protected int $sleep = 0;
 
     protected function curl(string $partUrl, $params = ['header' => null, 'json' => null, 'get' => null])
     {
@@ -83,10 +83,13 @@ class Egnyte
      * this might prevent a overpassing the hard limit of 2 API calls per minute
      * defined by Egnte
      *
-     * @param float $microseconds amount of microseconds to wait before making
+     * @param int $microseconds amount of microseconds to wait before making
      * an API call
      */
-    public function setSleep(float $microseconds) {
+    public function setSleep(int $microseconds) {
+        if ($microseconds > 1000000) {
+            throw new \Exception('Egnyte setSleep microseconds value must be less than 1000000');
+        }
         $this->sleep = $microseconds;
     }
 
