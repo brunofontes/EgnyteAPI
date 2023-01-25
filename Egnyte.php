@@ -5,8 +5,15 @@ class Egnyte
 {
     protected $token;
 
+    protected float $sleep = 0.0;
+
     protected function curl(string $partUrl, $params = ['header' => null, 'json' => null, 'get' => null])
     {
+        if ($this->sleep > 0.0) {
+            usleep($this->sleep);
+        }
+
+        //TODO: account for limits of 2 calls per second and 1000 calls per day
         $defaults = [
             CURLOPT_URL => 'https://oxo.egnyte.com' . $partUrl,
             CURLOPT_HTTPGET => true,
@@ -69,6 +76,18 @@ class Egnyte
     {
         $url = '/pubapi/v1/userinfo';
         return $this->curl($url);
+    }
+
+    /**
+     * Sets a sleep to wait before making an Egnte call
+     * this might prevent a overpassing the hard limit of 2 API calls per minute
+     * defined by Egnte
+     *
+     * @param float $microseconds amount of microseconds to wait before making
+     * an API call
+     */
+    public function setSleep(float $microseconds) {
+        $this->sleep = $microseconds;
     }
 
     public function createFolder($path): array
